@@ -1,0 +1,243 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Integration Test should add comments to to a pr that already has some 1`] = `
+[MockFunction] {
+  "calls": Array [
+    Array [
+      0,
+      "All comments have been added",
+    ],
+  ],
+  "results": Array [
+    Object {
+      "type": "return",
+      "value": undefined,
+    },
+  ],
+}
+`;
+
+exports[`Integration Test should add comments to to a pr that already has some 2`] = `
+[MockFunction] {
+  "calls": Array [
+    Array [
+      Object {
+        "comments": Array [
+          Object {
+            "content": "new comment one",
+          },
+        ],
+        "status": 1,
+      },
+      "some-repo",
+      123456,
+      "team-project",
+    ],
+    Array [
+      Object {
+        "comments": Array [
+          Object {
+            "content": "new comment two",
+          },
+        ],
+        "status": 1,
+      },
+      "some-repo",
+      123456,
+      "team-project",
+    ],
+  ],
+  "results": Array [
+    Object {
+      "type": "return",
+      "value": undefined,
+    },
+    Object {
+      "type": "return",
+      "value": undefined,
+    },
+  ],
+}
+`;
+
+exports[`Integration Test should add comments to to a pr that has none 1`] = `
+[MockFunction] {
+  "calls": Array [
+    Array [
+      0,
+      "All comments have been added",
+    ],
+  ],
+  "results": Array [
+    Object {
+      "type": "return",
+      "value": undefined,
+    },
+  ],
+}
+`;
+
+exports[`Integration Test should add comments to to a pr that has none 2`] = `
+[MockFunction] {
+  "calls": Array [
+    Array [
+      Object {
+        "comments": Array [
+          Object {
+            "content": "comment one",
+          },
+        ],
+        "status": 1,
+      },
+      "some-repo",
+      123456,
+      "team-project",
+    ],
+    Array [
+      Object {
+        "comments": Array [
+          Object {
+            "content": "comment two",
+          },
+        ],
+        "status": 1,
+      },
+      "some-repo",
+      123456,
+      "team-project",
+    ],
+  ],
+  "results": Array [
+    Object {
+      "type": "return",
+      "value": undefined,
+    },
+    Object {
+      "type": "return",
+      "value": undefined,
+    },
+  ],
+}
+`;
+
+exports[`Integration Test should fail because no comments were provided 1`] = `
+[MockFunction] {
+  "calls": Array [
+    Array [
+      2,
+      "comments must be provided",
+    ],
+  ],
+  "results": Array [
+    Object {
+      "type": "return",
+      "value": undefined,
+    },
+  ],
+}
+`;
+
+exports[`Integration Test should fail because no comments were provided 2`] = `[MockFunction]`;
+
+exports[`Integration Test should ignore a comment that already exists and add the rest 1`] = `
+[MockFunction] {
+  "calls": Array [
+    Array [
+      0,
+      "All comments have been added",
+    ],
+  ],
+  "results": Array [
+    Object {
+      "type": "return",
+      "value": undefined,
+    },
+  ],
+}
+`;
+
+exports[`Integration Test should ignore a comment that already exists and add the rest 2`] = `
+[MockFunction] {
+  "calls": Array [
+    Array [
+      Object {
+        "comments": Array [
+          Object {
+            "content": "new comment two",
+          },
+        ],
+        "status": 1,
+      },
+      "some-repo",
+      123456,
+      "team-project",
+    ],
+  ],
+  "results": Array [
+    Object {
+      "type": "return",
+      "value": undefined,
+    },
+  ],
+}
+`;
+
+exports[`Integration Test should skip comments that are just whitespace 1`] = `
+[MockFunction] {
+  "calls": Array [
+    Array [
+      0,
+      "All comments have been added",
+    ],
+  ],
+  "results": Array [
+    Object {
+      "type": "return",
+      "value": undefined,
+    },
+  ],
+}
+`;
+
+exports[`Integration Test should skip comments that are just whitespace 2`] = `
+[MockFunction] {
+  "calls": Array [
+    Array [
+      Object {
+        "comments": Array [
+          Object {
+            "content": "comment one",
+          },
+        ],
+        "status": 1,
+      },
+      "some-repo",
+      123456,
+      "team-project",
+    ],
+    Array [
+      Object {
+        "comments": Array [
+          Object {
+            "content": "comment two",
+          },
+        ],
+        "status": 1,
+      },
+      "some-repo",
+      123456,
+      "team-project",
+    ],
+  ],
+  "results": Array [
+    Object {
+      "type": "return",
+      "value": undefined,
+    },
+    Object {
+      "type": "return",
+      "value": undefined,
+    },
+  ],
+}
+`;

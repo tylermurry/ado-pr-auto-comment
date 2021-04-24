@@ -1,0 +1,44 @@
+{
+  "manifestVersion": 1,
+  "id": "pr-auto-comment",
+  "name": "PR Auto-Comment",
+  "version": "1.0.0",
+  "publisher": "tylermurry",
+  "public": false,
+  "targets": [
+    {
+      "id": "Microsoft.VisualStudio.Services"
+    }
+  ],
+  "description": "An easy way to automatically add comments to Azure DevOps pull request",
+  "categories": [
+    "Azure Pipelines"
+  ],
+  "icons": {
+    "default": "images/extension-icon.png"
+  },
+  "content": {
+    "details": {
+      "path": "README.md"
+    }
+  },
+  "files": [
+    { "path": "task" },
+    {
+      "path": "images",
+      "addressable": true
+    }
+  ],
+  "contributions": [
+    {
+      "id": "custom-build-release-task",
+      "type": "ms.vss-distributed-task.task",
+      "targets": [
+        "ms.vss-distributed-task.tasks"
+      ],
+      "properties": {
+        "name": "task"
+      }
+    }
+  ]
+}
