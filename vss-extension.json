@@ -4,13 +4,13 @@
   "name": "PR Auto-Comment",
   "version": "1.0.0",
   "publisher": "tylermurry",
-  "public": false,
+  "public": true,
   "targets": [
     {
       "id": "Microsoft.VisualStudio.Services"
     }
   ],
-  "description": "An easy way to automatically add comments to Azure DevOps pull request",
+  "description": "An easy way to automatically add comments to an Azure DevOps pull request",
   "categories": [
     "Azure Pipelines"
   ],
