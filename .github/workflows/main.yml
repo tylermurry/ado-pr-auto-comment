@@ -1,0 +1,17 @@
+on: [pull_request]
+
+jobs:
+  pr_build:
+    runs-on: ubuntu-latest
+    name: PR Build
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: npm install
+        run: npm install
+        working-directory: task/src
+
+      - name: npm test
+        run: npm test
+        working-directory: task/src
