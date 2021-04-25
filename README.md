@@ -15,7 +15,7 @@ Here are some examples:
 * etc...
 
 ## Install the Task for Your Organization
-1. Install the `PR Auto-Comment` extension in your organization. [More information here.](https://docs.microsoft.com/en-us/azure/devops/marketplace/install-extension?view=azure-devops&tabs=browser)
+1. Install the [PR Auto-Comment](https://marketplace.visualstudio.com/items?itemName=tylermurry.pr-auto-comment) extension in your organization. [More information here.](https://docs.microsoft.com/en-us/azure/devops/marketplace/install-extension?view=azure-devops&tabs=browser)
 1. Add the task into your pull request build:
 
     ```yml
