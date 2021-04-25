@@ -33,7 +33,7 @@ Here are some examples:
       persistCredentials: true
     ```  
 1. Grant the build job user the `Contribute to pull requests` permission to allow it to add pull request comments. [More information here.](https://docs.microsoft.com/en-us/azure/devops/organizations/security/set-git-tfvc-repository-permissions?view=azure-devops#set-git-repository-permissions)
-1. Now you're to automatically add comments! 💥
+1. Now you're ready to automatically add comments! 💥
 
 # Task Options
 | Property               | Required | Default Value                       | Description                                                                 |
