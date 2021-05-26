@@ -11,6 +11,8 @@ const gitApiMock = {
 };
 (WebApi as any).mockImplementation(() => ({ getGitApi: () => gitApiMock }));
 
+const defaultCommentSeparator = "\n";
+
 jest.setTimeout(10000000);
 
 describe('Integration Test', () => {
@@ -26,7 +28,9 @@ describe('Integration Test', () => {
     })
 
     it('should fail because no comments were provided', async () => {
-        (tl.getInput as any).mockReturnValueOnce(null);
+        (tl.getInput as any)
+            .mockReturnValueOnce(null)
+            .mockReturnValueOnce(defaultCommentSeparator);
         gitApiMock.getThreads.mockReturnValueOnce([]);
 
         await executeTask();
@@ -36,7 +40,9 @@ describe('Integration Test', () => {
     });
 
     it('should skip comments that are just whitespace', async () => {
-        (tl.getInput as any).mockReturnValueOnce("comment one\n   \ncomment two");
+        (tl.getInput as any)
+            .mockReturnValueOnce("comment one\n   \ncomment two")
+            .mockReturnValueOnce(defaultCommentSeparator);
         gitApiMock.getThreads.mockReturnValueOnce([]);
 
         await executeTask();
@@ -45,8 +51,10 @@ describe('Integration Test', () => {
         expect(gitApiMock.createThread).toMatchSnapshot();
     });
 
-    it('should add comments to to a pr that has none', async () => {
-        (tl.getInput as any).mockReturnValueOnce("comment one\ncomment two");
+    it('should add comments to a pr that has none', async () => {
+        (tl.getInput as any)
+            .mockReturnValueOnce("comment one\ncomment two")
+            .mockReturnValueOnce(defaultCommentSeparator);
         gitApiMock.getThreads.mockReturnValueOnce([]);
 
         await executeTask();
@@ -55,8 +63,10 @@ describe('Integration Test', () => {
         expect(gitApiMock.createThread).toMatchSnapshot();
     });
 
-    it('should add comments to to a pr that already has some', async () => {
-        (tl.getInput as any).mockReturnValueOnce("new comment one\nnew comment two");
+    it('should add comments to a pr that already has some', async () => {
+        (tl.getInput as any)
+            .mockReturnValueOnce("new comment one\nnew comment two")
+            .mockReturnValueOnce(defaultCommentSeparator);
         gitApiMock.getThreads.mockReturnValueOnce([
             { comments: [{content: "existing comment one"}] },
             { comments: [{content: "existing comment two"}] },
@@ -69,11 +79,26 @@ describe('Integration Test', () => {
     });
 
     it('should ignore a comment that already exists and add the rest', async () => {
-        (tl.getInput as any).mockReturnValueOnce("existing comment one\nnew comment two");
+        (tl.getInput as any)
+            .mockReturnValueOnce("existing comment one\nnew comment two")
+            .mockReturnValueOnce(defaultCommentSeparator);
         gitApiMock.getThreads.mockReturnValueOnce([
             { comments: [{content: "existing comment one"}] },
             { comments: [{content: "existing comment two"}] },
         ]);
+
+        await executeTask();
+
+        expect(tl.setResult).toMatchSnapshot();
+        expect(gitApiMock.createThread).toMatchSnapshot();
+    });
+
+    it('should use provided newCommentSeparator to split comments', async () => {
+        const newCommentSeparator = "||";
+
+        (tl.getInput as any)
+            .mockReturnValueOnce(`comment one${newCommentSeparator}comment two${newCommentSeparator}comment three`)
+            .mockReturnValueOnce(newCommentSeparator);
 
         await executeTask();
 

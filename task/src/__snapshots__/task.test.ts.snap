@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Integration Test should add comments to to a pr that already has some 1`] = `
+exports[`Integration Test should add comments to a pr that already has some 1`] = `
 [MockFunction] {
   "calls": Array [
     Array [
@@ -17,7 +17,7 @@ exports[`Integration Test should add comments to to a pr that already has some 1
 }
 `;
 
-exports[`Integration Test should add comments to to a pr that already has some 2`] = `
+exports[`Integration Test should add comments to a pr that already has some 2`] = `
 [MockFunction] {
   "calls": Array [
     Array [
@@ -60,7 +60,7 @@ exports[`Integration Test should add comments to to a pr that already has some 2
 }
 `;
 
-exports[`Integration Test should add comments to to a pr that has none 1`] = `
+exports[`Integration Test should add comments to a pr that has none 1`] = `
 [MockFunction] {
   "calls": Array [
     Array [
@@ -77,7 +77,7 @@ exports[`Integration Test should add comments to to a pr that has none 1`] = `
 }
 `;
 
-exports[`Integration Test should add comments to to a pr that has none 2`] = `
+exports[`Integration Test should add comments to a pr that has none 2`] = `
 [MockFunction] {
   "calls": Array [
     Array [
@@ -230,6 +230,83 @@ exports[`Integration Test should skip comments that are just whitespace 2`] = `
     ],
   ],
   "results": Array [
+    Object {
+      "type": "return",
+      "value": undefined,
+    },
+    Object {
+      "type": "return",
+      "value": undefined,
+    },
+  ],
+}
+`;
+
+exports[`Integration Test should use provided newCommentSeparator to split comments 1`] = `
+[MockFunction] {
+  "calls": Array [
+    Array [
+      0,
+      "All comments have been added",
+    ],
+  ],
+  "results": Array [
+    Object {
+      "type": "return",
+      "value": undefined,
+    },
+  ],
+}
+`;
+
+exports[`Integration Test should use provided newCommentSeparator to split comments 2`] = `
+[MockFunction] {
+  "calls": Array [
+    Array [
+      Object {
+        "comments": Array [
+          Object {
+            "content": "comment one",
+          },
+        ],
+        "status": 1,
+      },
+      "some-repo",
+      123456,
+      "team-project",
+    ],
+    Array [
+      Object {
+        "comments": Array [
+          Object {
+            "content": "comment two",
+          },
+        ],
+        "status": 1,
+      },
+      "some-repo",
+      123456,
+      "team-project",
+    ],
+    Array [
+      Object {
+        "comments": Array [
+          Object {
+            "content": "comment three",
+          },
+        ],
+        "status": 1,
+      },
+      "some-repo",
+      123456,
+      "team-project",
+    ],
+  ],
+  "results": Array [
+    Object {
+      "type": "return",
+      "value": undefined,
+    },
     Object {
       "type": "return",
       "value": undefined,
