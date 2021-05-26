@@ -26,6 +26,13 @@
       "type": "multiLine",
       "label": "The list of comments that will be added to the pull request",
       "required": true
+    },
+    {
+      "name": "newCommentSeparator",
+      "type": "string",
+      "label": "Separator to delimit a new comment",
+      "defaultValue": "\\n",
+      "required": true
     }
   ],
   "execution": {

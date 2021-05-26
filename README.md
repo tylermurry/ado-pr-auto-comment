@@ -36,10 +36,11 @@ Here are some examples:
 1. Now you're ready to automatically add comments! 💥
 
 # Task Options
-| Property               | Required | Default Value                       | Description                                                                 |
-| -----------------------|----------|-------------------------------------|-----------------------------------------------------------------------------|
-| `accessToken`          | Yes      | `$(System.AccessToken)`             | The access token used to retrieve and update comments on the pull requests  |
-| `comments   `          | Yes      |                                     | Newline-delimited comments that should be added to each PR.                 |
+| Property               | Required | Default Value                       | Description                                                                   |
+| -----------------------|----------|-------------------------------------|-------------------------------------------------------------------------------|
+| `accessToken`          | Yes      | `$(System.AccessToken)`             | The access token used to retrieve and update comments on the pull requests    |
+| `comments   `          | Yes      |                                     | Comments, delimited by `newCommentSeparator` that should be added to each PR. |
+| `newCommentSeparator`  | Yes      | `\n` (newline)                      | Separator to delimit a new comment                                            |
 
 # Contribution
 Found an issue or see something cool that's missing? Pull requests and issues are warmly accepted!   
