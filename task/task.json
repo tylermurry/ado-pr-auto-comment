@@ -30,7 +30,7 @@
     {
       "name": "newCommentDelimiter",
       "type": "string",
-      "label": "Separator to delimit a new comment",
+      "label": "New comment delimiter to differentiate between separate comments",
       "defaultValue": "\\n",
       "required": true
     }
