@@ -279,7 +279,8 @@ exports[`Integration Test should use provided newCommentDelimiter to split comme
       Object {
         "comments": Array [
           Object {
-            "content": "comment two",
+            "content": "comment   
+  two",
           },
         ],
         "status": 1,
@@ -292,7 +293,9 @@ exports[`Integration Test should use provided newCommentDelimiter to split comme
       Object {
         "comments": Array [
           Object {
-            "content": "comment three",
+            "content": "comment
+
+three",
           },
         ],
         "status": 1,

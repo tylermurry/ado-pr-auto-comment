@@ -97,7 +97,7 @@ describe('Integration Test', () => {
         const newCommentDelimiter = "||";
 
         (tl.getInput as any)
-            .mockReturnValueOnce(`comment one${newCommentDelimiter}comment two${newCommentDelimiter}comment three`)
+            .mockReturnValueOnce(`comment one${newCommentDelimiter}comment   \n  two${newCommentDelimiter}comment\n\nthree`)
             .mockReturnValueOnce(newCommentDelimiter);
 
         await executeTask();
