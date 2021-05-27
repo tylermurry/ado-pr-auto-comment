@@ -242,7 +242,7 @@ exports[`Integration Test should skip comments that are just whitespace 2`] = `
 }
 `;
 
-exports[`Integration Test should use provided newCommentSeparator to split comments 1`] = `
+exports[`Integration Test should use provided newCommentDelimiter to split comments 1`] = `
 [MockFunction] {
   "calls": Array [
     Array [
@@ -259,7 +259,7 @@ exports[`Integration Test should use provided newCommentSeparator to split comme
 }
 `;
 
-exports[`Integration Test should use provided newCommentSeparator to split comments 2`] = `
+exports[`Integration Test should use provided newCommentDelimiter to split comments 2`] = `
 [MockFunction] {
   "calls": Array [
     Array [

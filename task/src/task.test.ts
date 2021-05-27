@@ -93,12 +93,12 @@ describe('Integration Test', () => {
         expect(gitApiMock.createThread).toMatchSnapshot();
     });
 
-    it('should use provided newCommentSeparator to split comments', async () => {
-        const newCommentSeparator = "||";
+    it('should use provided newCommentDelimiter to split comments', async () => {
+        const newCommentDelimiter = "||";
 
         (tl.getInput as any)
-            .mockReturnValueOnce(`comment one${newCommentSeparator}comment two${newCommentSeparator}comment three`)
-            .mockReturnValueOnce(newCommentSeparator);
+            .mockReturnValueOnce(`comment one${newCommentDelimiter}comment two${newCommentDelimiter}comment three`)
+            .mockReturnValueOnce(newCommentDelimiter);
 
         await executeTask();
 

@@ -28,7 +28,7 @@
       "required": true
     },
     {
-      "name": "newCommentSeparator",
+      "name": "newCommentDelimiter",
       "type": "string",
       "label": "Separator to delimit a new comment",
       "defaultValue": "\\n",

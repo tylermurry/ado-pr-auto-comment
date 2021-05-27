@@ -5,11 +5,11 @@ export default async () => {
     try {
         const accessToken = tl.getInput('accessToken', true);
         const commentsInput = tl.getInput('comments', true);
-        const newCommentSeparator = tl.getInput('newCommentSeparator', true);
+        const newCommentDelimiter = tl.getInput('newCommentDelimiter', true);
 
         if (!accessToken) throw Error('accessToken must be provided');
         if (!commentsInput) throw Error('comments must be provided');
-        if (!newCommentSeparator) throw Error('newCommentSeparator must be provided');
+        if (!newCommentDelimiter) throw Error('newCommentDelimiter must be provided');
 
         if (!process.env.SYSTEM_TEAMPROJECT) throw Error('System.TeamProject must be provided');
         if (!process.env.BUILD_REPOSITORY_NAME) throw Error('Build.Repository.Name must be provided');
@@ -20,7 +20,7 @@ export default async () => {
         const repo = process.env.BUILD_REPOSITORY_NAME;
         const pullRequestId = parseInt(process.env.SYSTEM_PULLREQUEST_PULLREQUESTID);
         const orgURL = process.env.SYSTEM_TEAMFOUNDATIONCOLLECTIONURI;
-        const comments = commentsInput.split(newCommentSeparator);
+        const comments = commentsInput.split(newCommentDelimiter);
 
         const pullRequestService = new PullRequestService(accessToken, project, orgURL);
         const threads = await pullRequestService.getThreads(repo, pullRequestId);

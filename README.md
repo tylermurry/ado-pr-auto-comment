@@ -39,8 +39,8 @@ Here are some examples:
 | Property               | Required | Default Value                       | Description                                                                   |
 | -----------------------|----------|-------------------------------------|-------------------------------------------------------------------------------|
 | `accessToken`          | Yes      | `$(System.AccessToken)`             | The access token used to retrieve and update comments on the pull requests    |
-| `comments   `          | Yes      |                                     | Comments, delimited by `newCommentSeparator` that should be added to each PR. |
-| `newCommentSeparator`  | Yes      | `\n` (newline)                      | Separator to delimit a new comment                                            |
+| `comments   `          | Yes      |                                     | Comments, delimited by `newCommentDelimiter` that should be added to each PR. |
+| `newCommentDelimiter`  | Yes      | `\n` (newline)                      | Separator to delimit a new comment                                            |
 
 # Contribution
 Found an issue or see something cool that's missing? Pull requests and issues are warmly accepted!   
