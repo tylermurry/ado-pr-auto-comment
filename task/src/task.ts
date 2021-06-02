@@ -5,11 +5,10 @@ export default async () => {
     try {
         const accessToken = tl.getInput('accessToken', true);
         const commentsInput = tl.getInput('comments', true);
-        const newCommentDelimiter = tl.getInput('newCommentDelimiter', true);
+        const newCommentDelimiter = tl.getInput('newCommentDelimiter') ?? '\n';
 
         if (!accessToken) throw Error('accessToken must be provided');
         if (!commentsInput) throw Error('comments must be provided');
-        if (!newCommentDelimiter) throw Error('newCommentDelimiter must be provided');
 
         if (!process.env.SYSTEM_TEAMPROJECT) throw Error('System.TeamProject must be provided');
         if (!process.env.BUILD_REPOSITORY_NAME) throw Error('Build.Repository.Name must be provided');

@@ -31,8 +31,7 @@
       "name": "newCommentDelimiter",
       "type": "string",
       "label": "New comment delimiter to differentiate between separate comments",
-      "defaultValue": "\\n",
-      "required": true
+      "required": false
     }
   ],
   "execution": {
