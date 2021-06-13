@@ -9,7 +9,7 @@
   "author": "Tyler Murry",
   "version": {
     "Major": 1,
-    "Minor": 0,
+    "Minor": 1,
     "Patch": 0
   },
   "instanceNameFormat": "PR Auto-Comment",
@@ -26,6 +26,12 @@
       "type": "multiLine",
       "label": "The list of comments that will be added to the pull request",
       "required": true
+    },
+    {
+      "name": "newCommentDelimiter",
+      "type": "string",
+      "label": "New comment delimiter to differentiate between separate comments",
+      "required": false
     }
   ],
   "execution": {

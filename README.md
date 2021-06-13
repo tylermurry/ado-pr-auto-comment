@@ -26,20 +26,35 @@ Here are some examples:
           Has this been tested in the dev environment?
           Does the documentation need to be updated due to this change?
     ```
+
     If you are using the `System.AccessToken` (default), be sure to set `persistCredentials` to `true` if it's not already:
     ```yml
     steps:
     - checkout: self
       persistCredentials: true
-    ```  
+    ```
+
+    By default, text separated by a new line (`\n`) is treated as a separate comment. To use a different comment delimiter, set `newCommentDelimiter`:
+    ```yml
+    steps:
+    - task: pr-auto-comment@1
+      inputs:
+        newCommentDelimiter: "||"
+        comments: |
+          This is the first comment ||
+          This is a second comment
+          This is second line of the second comment ||
+          This is a third comment
+    ```
 1. Grant the build job user the `Contribute to pull requests` permission to allow it to add pull request comments. [More information here.](https://docs.microsoft.com/en-us/azure/devops/organizations/security/set-git-tfvc-repository-permissions?view=azure-devops#set-git-repository-permissions)
 1. Now you're ready to automatically add comments! 💥
 
 # Task Options
-| Property               | Required | Default Value                       | Description                                                                 |
-| -----------------------|----------|-------------------------------------|-----------------------------------------------------------------------------|
-| `accessToken`          | Yes      | `$(System.AccessToken)`             | The access token used to retrieve and update comments on the pull requests  |
-| `comments   `          | Yes      |                                     | Newline-delimited comments that should be added to each PR.                 |
+| Property               | Required | Default Value                       | Description                                                                    |
+| -----------------------|----------|-------------------------------------|--------------------------------------------------------------------------------|
+| `accessToken`          | Yes      | `$(System.AccessToken)`             | The access token used to retrieve and update comments on the pull requests     |
+| `comments`             | Yes      |                                     | Comments, separated by `newCommentDelimiter`, that should be added to each PR. |
+| `newCommentDelimiter`  | Yes      | `\n` (newline)                      | New comment delimiter to differentiate between separate comments               |
 
 # Contribution
-Found an issue or see something cool that's missing? Pull requests and issues are warmly accepted!   
+Found an issue or see something cool that's missing? Pull requests and issues are warmly accepted!
