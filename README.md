@@ -1,6 +1,8 @@
 # PR Auto-Comment
 An easy way to automatically add comments to an Azure DevOps pull request
 
+More information on the [Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=tylermurry.pr-auto-comment)
+
 ## Why would I use this?
 Sometimes there are things a team would like developers to consider during a pull request.
 Putting these in the description can help but is easily overlooked or ignored.
