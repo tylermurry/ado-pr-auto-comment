@@ -40,5 +40,14 @@
         "name": "task"
       }
     }
-  ]
+  ],
+  "links": {
+      "support": {
+          "uri": "https://github.com/tylermurry/ado-pr-auto-comment/issues"
+      }
+  },
+  "repository": {
+      "type": "git",
+      "uri": "https://github.com/tylermurry/ado-pr-auto-comment"
+  },
 }
